@@ -2,6 +2,7 @@ import { useState, useEffect, useEffectEvent } from "react";
 import Tabuleiro from "../Tabuleiro/Tabuleiro";
 import { definirVencedor } from "../utils/definirVencedor";
 import { parSimbolo } from "../utils/simbolosD";
+import styles from "../Jogo/jogo.module.css"
 
 export default function Jogo() {
     const [historico, setHistorico] = useState([Array(9).fill(null)]);
@@ -41,7 +42,7 @@ export default function Jogo() {
     });
 
     return (
-        <div>
+        <div className={styles.main}>
             <button onClick={resetJogo}>Resetar</button>
             <div>
                 <Tabuleiro xEProx={xEProx} quadrados={quadradoAtual} jogadorAtual={posicaoJogada} simbolos={simbolos}/>

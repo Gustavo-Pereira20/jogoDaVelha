@@ -1,0 +1,9 @@
+.tabuleiro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.linha{
+    text-align: center;
+}
