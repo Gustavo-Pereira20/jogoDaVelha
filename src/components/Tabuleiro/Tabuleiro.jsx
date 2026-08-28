@@ -5,8 +5,9 @@ import {definirVencedor} from "../utils/definirVencedor";
 // Segundo componente do projeto de refatoração. Componente TABULEIRO.
 // Propriedades do componente tabuleiro ->
 
-export default function Tabuleiro({xEProx, quadrados, jogadorAtual}) {
+export default function Tabuleiro({xEProx, quadrados, jogadorAtual, simbolos}) {
     // posicaoClique: No componente "Quadrado", será passado como propriedade para o "funcaoClique".
+    
     function posicaoClique(x) {
         // Condicional para verificar se há algum vencedor da partida.
         if (definirVencedor(quadrados) || quadrados[x]) {
@@ -16,11 +17,11 @@ export default function Tabuleiro({xEProx, quadrados, jogadorAtual}) {
         const proxQuad = quadrados.slice();
         // Se 'X' for o próximo jogador, define o quadrado como 'X'.
         if (xEProx) {
-            proxQuad[x] = 'X'
+            proxQuad[x] = simbolos[0]
         } 
         // Caso contrário, define como 'O'.
         else {
-            proxQuad[x] = 'O'
+            proxQuad[x] = simbolos[1]
         }
         // Por fim, passa como argumentos o resultado da váriavel 'proxQuad'.
         jogadorAtual(proxQuad)
@@ -31,12 +32,12 @@ export default function Tabuleiro({xEProx, quadrados, jogadorAtual}) {
     // Criação da variável 'estado'. Armazena o vencedor e imprime no fim da partida.
     let estado;
     // Se o retorno da função 'definirVencedor' for true.
-    if (vencedor) {
-        // 'estado' armazena uma string com o vencedor da partida.
-        estado = `Vencedor: ${vencedor}`
-    } else{
-        // Caso contrário, imprime quem joga a próxima rodada.
-        estado = `Próximo jogador: ${xEProx ? 'X' : 'O'}`
+    if (vencedor === "Empate") {
+     estado = "O jogo deu velha! 👵";
+    } else if (vencedor) {
+        estado = `Vencedor: ${vencedor}`;
+    } else {
+        estado = `Próximo jogador: ${xEProx ? simbolos[0] : simbolos[1]}`;
     }
     
     return(
