@@ -1,0 +1,61 @@
+/* Definição das variáveis de tema */
+:root {
+  /* Modo Claro */
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --borda-card: #e2e8f0;
+  --texto-principal: #0f172a;
+  --bg-reset: #ef4444;
+  --bg-reset-hover: #dc2626;
+  --texto-reset: #ffffff;
+  --bg-btn-historico: #f1f5f9;
+  --bg-btn-historico-hover: #e2e8f0;
+  --texto-btn-historico: #334155;
+  --sombra-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+
+  --bg-btn-tema: #ffffff;
+  --texto-btn-tema: #1e293b;
+  --borda-btn-tema: #cbd5e1;
+  --sombra-btn-tema: rgba(0, 0, 0, 0.08);
+
+  /* Modo Escuro */
+  --bg-btn-tema-d: #1e293b;
+  --texto-btn-tema-d: #f8fafc;
+  --borda-btn-tema-d: #475569;
+  --sombra-btn-tema-d: rgba(0, 0, 0, 0.3);
+
+  /* Modo Escuro */
+  --bg-main-d: #0f172a;
+  --bg-card-d: #1e293b;
+  --borda-card-d: #334155;
+  --texto-principal-d: #f8fafc;
+  --bg-reset-d: #dc2626;
+  --bg-reset-hover-d: #b91c1c;
+  --texto-reset-d: #ffffff;
+  --bg-btn-historico-d: #334155;
+  --bg-btn-historico-hover-d: #475569;
+  --texto-btn-historico-d: #f1f5f9;
+  --sombra-card-d: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+
+  --bg-quadrado: #ffffff;
+  --texto-quadrado: #1a1a1a;
+  --borda-quadrado: #e0e0e0;
+  --sombra-quadrado: rgba(0, 0, 0, 0.08);
+  --bg-quadrado-hover: #f5f5f5;
+  --bg-quadrado-active: #e8e8e8;
+
+  --bg-quadrado-d: #2a2a2a;
+  --texto-quadrado-d: #ffffff;
+  --borda-quadrado-d: #404040;
+  --sombra-quadrado-d: rgba(0, 0, 0, 0.3);
+  --bg-quadrado-hove-d: #353535;
+  --bg-quadrado-active-d: #1f1f1f;
+
+  --texto-estado: #2c3e50;
+  --bg-estado: #f0f4f8;
+  --borda-estado: #d9e2ec;
+
+  --texto-estado-d: #e2e8f0;
+  --bg-estado-d: #1e293b;
+  --borda-estado-d: #334155;
+}

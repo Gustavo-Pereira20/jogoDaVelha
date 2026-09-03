@@ -1,13 +1,6 @@
-/* Definição das variáveis de tema */
-:root {
-  --texto-estado: #2c3e50;
-  --bg-estado: #f0f4f8;
-  --borda-estado: #d9e2ec;
+@import url(index.css);
 
-  --texto-estado-d: #e2e8f0;
-  --bg-estado-d: #1e293b;
-  --borda-estado-d: #334155;
-}
+/* Definição das variáveis de tema */
 
 /* Modo Claro (Padrão) */
 .estado {

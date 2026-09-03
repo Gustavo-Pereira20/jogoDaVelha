@@ -1,20 +1,6 @@
+@import url(index.css);
+
 /* Definição das variáveis de tema */
-:root {
-  --bg-quadrado: #ffffff;
-  --texto-quadrado: #1a1a1a;
-  --borda-quadrado: #e0e0e0;
-  --sombra-quadrado: rgba(0, 0, 0, 0.08);
-  --bg-quadrado-hover: #f5f5f5;
-  --bg-quadrado-active: #e8e8e8;
-
-  --bg-quadrado-d: #2a2a2a;
-  --texto-quadrado-d: #ffffff;
-  --borda-quadrado-d: #404040;
-  --sombra-quadrado-d: rgba(0, 0, 0, 0.3);
-  --bg-quadrado-hove-d: #353535;
-  --bg-quadrado-active-d: #1f1f1f;
-}
-
 
 /* Estilização da classe do quadrado */
 .quadrado {
