@@ -1,5 +1,6 @@
 /* Definição das variáveis de tema */
 :root {
+  /* Modo Claro */
   --bg-main: #f8fafc;
   --bg-card: #ffffff;
   --borda-card: #e2e8f0;
@@ -11,24 +12,35 @@
   --bg-btn-historico-hover: #e2e8f0;
   --texto-btn-historico: #334155;
   --sombra-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+
+  --bg-btn-tema: #ffffff;
+  --texto-btn-tema: #1e293b;
+  --borda-btn-tema: #cbd5e1;
+  --sombra-btn-tema: rgba(0, 0, 0, 0.08);
+
+  /* Modo Escuro */
+  --bg-btn-tema-d: #1e293b;
+  --texto-btn-tema-d: #f8fafc;
+  --borda-btn-tema-d: #475569;
+  --sombra-btn-tema-d: rgba(0, 0, 0, 0.3);
+
+  /* Modo Escuro */
+  --bg-main-d: #0f172a;
+  --bg-card-d: #1e293b;
+  --borda-card-d: #334155;
+  --texto-principal-d: #f8fafc;
+  --bg-reset-d: #dc2626;
+  --bg-reset-hover-d: #b91c1c;
+  --texto-reset-d: #ffffff;
+  --bg-btn-historico-d: #334155;
+  --bg-btn-historico-hover-d: #475569;
+  --texto-btn-historico-d: #f1f5f9;
+  --sombra-card-d: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
 }
 
-/* Modo Escuro */
-:global(.dark) {
-  --bg-main: #0f172a;
-  --bg-card: #1e293b;
-  --borda-card: #334155;
-  --texto-principal: #f8fafc;
-  --bg-reset: #dc2626;
-  --bg-reset-hover: #b91c1c;
-  --texto-reset: #ffffff;
-  --bg-btn-historico: #334155;
-  --bg-btn-historico-hover: #475569;
-  --texto-btn-historico: #f1f5f9;
-  --sombra-card: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
-}
+/* Modo Claro (Padrão) */
 
-/* Container Principal ocupando toda a tela */
+/* Container Principal */
 .main {
   width: 100%;
   min-height: 100vh;
@@ -115,4 +127,71 @@
 
 .botaoHistorico:hover {
   background-color: var(--bg-btn-historico-hover);
+}
+
+/* =================================================== */
+/* Variantes de Modo Escuro (.dark encadeado) */
+/* =================================================== */
+
+.main.dark {
+  background-color: var(--bg-main-d);
+  color: var(--texto-principal-d);
+}
+
+.jogo.dark {
+  background-color: var(--bg-card-d);
+  border-color: var(--borda-card-d);
+  box-shadow: var(--sombra-card-d);
+}
+
+.botaoReset.dark {
+  background-color: var(--bg-reset-d);
+  color: var(--texto-reset-d);
+}
+
+.botaoReset.dark:hover {
+  background-color: var(--bg-reset-hover-d);
+}
+
+.botaoHistorico.dark {
+  background-color: var(--bg-btn-historico-d);
+  color: var(--texto-btn-historico-d);
+}
+
+.botaoHistorico.dark:hover {
+  background-color: var(--bg-btn-historico-hover-d);
+}
+
+.botaoTema {
+  background-color: var(--bg-btn-tema);
+  color: var(--texto-btn-tema);
+  border: 1px solid var(--borda-btn-tema);
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px var(--sombra-btn-tema);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.botaoTema:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px var(--sombra-btn-tema);
+}
+
+.botaoTema:active {
+  transform: translateY(0);
+}
+
+/* Variante Modo Escuro */
+.botaoTema.dark {
+  background-color: var(--bg-btn-tema-d);
+  color: var(--texto-btn-tema-d);
+  border-color: var(--borda-btn-tema-d);
+  box-shadow: 0 2px 6px var(--sombra-btn-tema-d);
 }

@@ -6,7 +6,7 @@ import styles from "../Tabuleiro/tabuleiro.module.css"
 // Segundo componente do projeto de refatoração. Componente TABULEIRO.
 // Propriedades do componente tabuleiro ->
 
-export default function Tabuleiro({xEProx, quadrados, jogadorAtual, simbolos}) {
+export default function Tabuleiro({xEProx, quadrados, jogadorAtual, simbolos, ehEscuro}) {
     // posicaoClique: No componente "Quadrado", será passado como propriedade para o "funcaoClique".
     
     function posicaoClique(x) {
@@ -43,19 +43,19 @@ export default function Tabuleiro({xEProx, quadrados, jogadorAtual, simbolos}) {
     
     return(
         <>
-        <div className={`${styles.estado} ${styles.dark}`}>{estado}</div>
-        <div className={`${styles.tabuleiro} ${styles.dark}`}>
-                    <Quadrado valorQuadrado={quadrados[0]} funcaoClique={() => posicaoClique(0)}/>
-                    <Quadrado valorQuadrado={quadrados[1]} funcaoClique={() => posicaoClique(1)}/>
-                    <Quadrado valorQuadrado={quadrados[2]} funcaoClique={() => posicaoClique(2)}/>
+        <div className={(`${styles.estado} ${ehEscuro ? styles.dark : ""}`)}>{estado}</div>
+        <div className={(`${styles.tabuleiro} ${ehEscuro ? styles.dark : ""}`)}>
+                    <Quadrado valorQuadrado={quadrados[0]} funcaoClique={() => posicaoClique(0)} ehEscuro={ehEscuro}/>
+                    <Quadrado valorQuadrado={quadrados[1]} funcaoClique={() => posicaoClique(1)} ehEscuro={ehEscuro}/>
+                    <Quadrado valorQuadrado={quadrados[2]} funcaoClique={() => posicaoClique(2)} ehEscuro={ehEscuro}/>
                         
-                    <Quadrado valorQuadrado={quadrados[3]} funcaoClique={() => posicaoClique(3)}/>
-                    <Quadrado valorQuadrado={quadrados[4]} funcaoClique={() => posicaoClique(4)}/>
-                    <Quadrado valorQuadrado={quadrados[5]} funcaoClique={() => posicaoClique(5)}/>
+                    <Quadrado valorQuadrado={quadrados[3]} funcaoClique={() => posicaoClique(3)} ehEscuro={ehEscuro}/>
+                    <Quadrado valorQuadrado={quadrados[4]} funcaoClique={() => posicaoClique(4)} ehEscuro={ehEscuro}/>
+                    <Quadrado valorQuadrado={quadrados[5]} funcaoClique={() => posicaoClique(5)} ehEscuro={ehEscuro}/>
 
-                    <Quadrado valorQuadrado={quadrados[6]} funcaoClique={() => posicaoClique(6)}/>
-                    <Quadrado valorQuadrado={quadrados[7]} funcaoClique={() => posicaoClique(7)}/>
-                    <Quadrado valorQuadrado={quadrados[8]} funcaoClique={() => posicaoClique(8)}/>
+                    <Quadrado valorQuadrado={quadrados[6]} funcaoClique={() => posicaoClique(6)} ehEscuro={ehEscuro}/>
+                    <Quadrado valorQuadrado={quadrados[7]} funcaoClique={() => posicaoClique(7)} ehEscuro={ehEscuro}/>
+                    <Quadrado valorQuadrado={quadrados[8]} funcaoClique={() => posicaoClique(8)} ehEscuro={ehEscuro}/>
         </div>
             
         </>
