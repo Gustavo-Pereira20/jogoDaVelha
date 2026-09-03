@@ -1,3 +1,68 @@
-.quadrado{
-    padding: 10px;
+/* Definição das variáveis de tema */
+:root {
+  --bg-quadrado: #ffffff;
+  --texto-quadrado: #1a1a1a;
+  --borda-quadrado: #e0e0e0;
+  --sombra-quadrado: rgba(0, 0, 0, 0.08);
+  --bg-quadrado-hover: #f5f5f5;
+  --bg-quadrado-active: #e8e8e8;
+
+  --bg-quadrado-d: #2a2a2a;
+  --texto-quadrado-d: #ffffff;
+  --borda-quadrado-d: #404040;
+  --sombra-quadrado-d: rgba(0, 0, 0, 0.3);
+  --bg-quadrado-hove-d: #353535;
+  --bg-quadrado-active-d: #1f1f1f;
+}
+
+
+/* Estilização da classe do quadrado */
+.quadrado {
+  width: 60px;
+  height: 60px;
+  background-color: var(--bg-quadrado);
+  color: var(--texto-quadrado);
+  border: 2px solid var(--borda-quadrado);
+  border-radius: 8px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px var(--sombra-quadrado);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.quadrado:hover {
+  background-color: var(--bg-quadrado-hover);
+}
+
+.quadrado:active {
+  background-color: var(--bg-quadrado-active);
+  transform: scale(0.96);
+}
+
+.quadrado:focus-visible {
+  outline: 2px solid var(--texto-quadrado);
+  outline-offset: 2px;
+}
+
+.quadrado.dark {
+  background-color: var(--bg-quadrado-d);
+  color: var(--texto-quadrado-d);
+  border-color: var(--borda-quadrado-d);
+  box-shadow: 0 2px 4px var(--sombra-quadrado-d);
+}
+
+.quadrado.dark:hover {
+  background-color: var(--bg-quadrado-hover-d);
+}
+
+.quadrado.dark:active {
+  background-color: var(--bg-quadrado-active-d);
+}
+
+.quadrado.dark:focus-visible {
+  outline-color: var(--texto-quadrado-d);
 }

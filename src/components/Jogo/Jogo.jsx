@@ -22,10 +22,10 @@ export default function Jogo() {
     }
 
     function resetJogo() {
-    setHistorico([Array(9).fill(null)]);
-    setMovimentoAtual(0);
-    setSimbolos(parSimbolo());
-  }
+        setHistorico([Array(9).fill(null)]);
+        setMovimentoAtual(0);
+        setSimbolos(parSimbolo());
+    }
 
     const movimentos = historico.map((quadrados, movimento) => {
         let descricao;
@@ -35,20 +35,18 @@ export default function Jogo() {
             descricao = 'Volte para o início do jogo.';
         }
         return (
-            <li key={movimento}>
-                <button onClick={() => pularPara(movimento)}>{descricao}</button>
+            <li key={movimento} className={styles.itemHistorico}>
+                <button className={styles.botaoHistorico} onClick={() => pularPara(movimento)}>{descricao}</button>
             </li>
         );
     });
 
     return (
         <div className={styles.main}>
-            <button onClick={resetJogo}>Resetar</button>
-            <div>
+            <div className={styles.jogo}>
+                <button className={styles.botaoReset} onClick={resetJogo}>Resetar</button>
                 <Tabuleiro xEProx={xEProx} quadrados={quadradoAtual} jogadorAtual={posicaoJogada} simbolos={simbolos}/>
-            </div>
-            <div>
-                <ol>{movimentos}</ol>
+                <ol className={styles.listaHistorico}>{movimentos}</ol>
             </div>
         </div>
     )

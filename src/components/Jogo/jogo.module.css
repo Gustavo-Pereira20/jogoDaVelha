@@ -1,11 +1,118 @@
-.main{
-    width: 100%;
-    height: 100vh;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+/* Definição das variáveis de tema */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --borda-card: #e2e8f0;
+  --texto-principal: #0f172a;
+  --bg-reset: #ef4444;
+  --bg-reset-hover: #dc2626;
+  --texto-reset: #ffffff;
+  --bg-btn-historico: #f1f5f9;
+  --bg-btn-historico-hover: #e2e8f0;
+  --texto-btn-historico: #334155;
+  --sombra-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
 }
 
+/* Modo Escuro */
+:global(.dark) {
+  --bg-main: #0f172a;
+  --bg-card: #1e293b;
+  --borda-card: #334155;
+  --texto-principal: #f8fafc;
+  --bg-reset: #dc2626;
+  --bg-reset-hover: #b91c1c;
+  --texto-reset: #ffffff;
+  --bg-btn-historico: #334155;
+  --bg-btn-historico-hover: #475569;
+  --texto-btn-historico: #f1f5f9;
+  --sombra-card: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+}
+
+/* Container Principal ocupando toda a tela */
+.main {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--texto-principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cartão do Jogo */
+.jogo {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda-card);
+  border-radius: 16px;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: var(--sombra-card);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Botão de Reset */
+.botaoReset {
+  background-color: var(--bg-reset);
+  color: var(--texto-reset);
+  border: none;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.botaoReset:hover {
+  background-color: var(--bg-reset-hover);
+}
+
+.botaoReset:active {
+  transform: scale(0.97);
+}
+
+/* Lista e Botões do Histórico */
+.listaHistorico {
+  width: 100%;
+  max-width: 280px;
+  margin-top: 24px;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.itemHistorico {
+  width: 100%;
+}
+
+.botaoHistorico {
+  width: 100%;
+  background-color: var(--bg-btn-historico);
+  color: var(--texto-btn-historico);
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.botaoHistorico:hover {
+  background-color: var(--bg-btn-historico-hover);
+}

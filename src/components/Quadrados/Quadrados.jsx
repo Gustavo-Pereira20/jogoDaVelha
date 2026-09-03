@@ -4,11 +4,11 @@ import styles from "../Quadrados/quadrados.module.css"
 // Primeiro componente do projeto de refatoração. Componente QUADRADO.
 // Propriedades do componente quadrado ->
 
-export default function Quadrado({valorQuadrado, funcaoClique}) {
+export default function Quadrado({valorQuadrado, funcaoClique, ehEscuro}) {
         return(
             <>
                 {/* funcaoClique: Define o que irá acontecer quando o botão for clicado. */}
-                <button className={styles.quadrado} onClick={funcaoClique}>
+                <button className={(`${styles.quadrado} ${ehEscuro ? styles.dark : ""}`)} onClick={funcaoClique}>
                     {/* valorQuadrado: Vai definir o valor do quadrado assim que ele for clicado (X ou O) */}
                     {valorQuadrado}
                 </button>

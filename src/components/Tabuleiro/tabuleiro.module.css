@@ -1,9 +1,52 @@
-.tabuleiro{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* Definição das variáveis de tema */
+:root {
+  --texto-estado: #2c3e50;
+  --bg-estado: #f0f4f8;
+  --borda-estado: #d9e2ec;
+
+  --texto-estado-d: #e2e8f0;
+  --bg-estado-d: #1e293b;
+  --borda-estado-d: #334155;
 }
 
-.linha{
-    text-align: center;
+/* Modo Claro (Padrão) */
+.estado {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--texto-estado);
+  background-color: var(--bg-estado);
+  border: 1px solid var(--borda-estado);
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Variantes de Modo Escuro (.dark) */
+.estado.dark {
+  color: var(--texto-estado-d);
+  background-color: var(--bg-estado-d);
+  border-color: var(--borda-estado-d);
+}
+
+.tabuleiro.dark {
+  /* Mantém a mesma estrutura de layout */
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+  grid-template-rows: repeat(3, 60px);
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }

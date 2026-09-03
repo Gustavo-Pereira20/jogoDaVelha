@@ -43,30 +43,21 @@ export default function Tabuleiro({xEProx, quadrados, jogadorAtual, simbolos}) {
     
     return(
         <>
-        <div className={styles.tabuleiro}>
-            <div>{estado}</div>
-            <div className={styles.linha}>
-                <div>
-                {/* 3 Linhas / 3 Colunas, atribuindo valores às propriedades do componente. */}
+        <div className={`${styles.estado} ${styles.dark}`}>{estado}</div>
+        <div className={`${styles.tabuleiro} ${styles.dark}`}>
                     <Quadrado valorQuadrado={quadrados[0]} funcaoClique={() => posicaoClique(0)}/>
                     <Quadrado valorQuadrado={quadrados[1]} funcaoClique={() => posicaoClique(1)}/>
                     <Quadrado valorQuadrado={quadrados[2]} funcaoClique={() => posicaoClique(2)}/>
-                </div>
-                <div>
+                        
                     <Quadrado valorQuadrado={quadrados[3]} funcaoClique={() => posicaoClique(3)}/>
                     <Quadrado valorQuadrado={quadrados[4]} funcaoClique={() => posicaoClique(4)}/>
                     <Quadrado valorQuadrado={quadrados[5]} funcaoClique={() => posicaoClique(5)}/>
-                </div>
-                <div>
+
                     <Quadrado valorQuadrado={quadrados[6]} funcaoClique={() => posicaoClique(6)}/>
                     <Quadrado valorQuadrado={quadrados[7]} funcaoClique={() => posicaoClique(7)}/>
                     <Quadrado valorQuadrado={quadrados[8]} funcaoClique={() => posicaoClique(8)}/>
-                </div>
-            </div>
-            
         </div>
             
         </>
     )
 }
-
