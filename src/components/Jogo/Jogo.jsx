@@ -1,5 +1,6 @@
 import { useState, useEffect, useEffectEvent } from "react";
 import Tabuleiro from "../Tabuleiro/Tabuleiro";
+import Placar from "../Placar/Placar";
 import { definirVencedor } from "../utils/definirVencedor";
 import { parSimbolo } from "../utils/simbolosD";
 import styles from "../Jogo/jogo.module.css"
@@ -11,10 +12,24 @@ export default function Jogo() {
     const [tema, setTema] = useState(() => {
         const temaSalvo = localStorage.getItem('tema')
         return temaSalvo ? temaSalvo : 'light'
-    }) 
+    })
+    const [placar, setPlacar] = useState({ vitoriasX: 0, vitoriasO: 0, empates: 0 });
 
     const xEProx = movimentoAtual % 2 === 0;
     const quadradoAtual = historico[movimentoAtual];
+
+    function atualizarPlacar(resultado) {0,
+        setPlacar((placarAtual) => {
+            if (resultado === 'X') {
+            return { ...placarAtual, vitoriasX: placarAtual.vitoriasX + 1 };
+            } else if (resultado === 'O') {
+            return { ...placarAtual, vitoriasO: placarAtual.vitoriasO + 1 };
+            } else if (resultado === 'Empate') {
+            return { ...placarAtual, empates: placarAtual.empates + 1 };
+            }
+            return placarAtual;
+        });
+    }
 
     function alterarTema() {
         const novoTema = tema === 'light' ? 'dark' : 'light'
@@ -23,10 +38,10 @@ export default function Jogo() {
         console.log(tema)
     }
 
-    function escuro(){
-        if (tema === 'light'){
+    function escuro() {
+        if (tema === 'light') {
             return false
-        } else{
+        } else {
             return true
         }
     }
@@ -67,9 +82,9 @@ export default function Jogo() {
                 {escuro() ? "☀️ Modo Claro" : "🌙 Modo Escuro"}
             </button>
             <div className={(`${styles.jogo} ${escuro() ? styles.dark : ""}`)}>
-                <button className={(`${styles.botaoReset} ${escuro() ? styles.dark : ""}`)} onClick={resetJogo}>Resetar</button>
-                <Tabuleiro xEProx={xEProx} quadrados={quadradoAtual} jogadorAtual={posicaoJogada} simbolos={simbolos} ehEscuro={escuro()}/>
-                <ol className={(`${styles.listaHistorico} ${escuro() ? styles.dark : ""}`)}>{movimentos}</ol>
+                    <button className={(`${styles.botaoReset} ${escuro() ? styles.dark : ""}`)} onClick={resetJogo}>Resetar</button>
+                    <Tabuleiro xEProx={xEProx} quadrados={quadradoAtual} jogadorAtual={posicaoJogada} simbolos={simbolos} ehEscuro={escuro()} />
+                    <ol className={(`${styles.listaHistorico} ${escuro() ? styles.dark : ""}`)}>{movimentos}</ol>
             </div>
         </div>
     )

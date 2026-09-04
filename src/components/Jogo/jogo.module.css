@@ -1,4 +1,4 @@
-@import url(index.css);
+@import url(/index.css);
 /* Modo Claro (Padrão) */
 
 /* Container Principal */
@@ -156,3 +156,4 @@
   border-color: var(--borda-btn-tema-d);
   box-shadow: 0 2px 6px var(--sombra-btn-tema-d);
 }
+

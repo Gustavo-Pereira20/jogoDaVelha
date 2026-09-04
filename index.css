@@ -59,3 +59,9 @@
   --bg-estado-d: #1e293b;
   --borda-estado-d: #334155;
 }
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
